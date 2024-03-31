@@ -36,7 +36,7 @@ variable "resource_groups" {
   }
 }
 
-variable "network" {
+variable "VirtualNetworks" {
   type = map(object({
     vnet_name                     = string
     resource_groups_map_key       = optional(string, "network")
@@ -82,7 +82,7 @@ variable "network_security_groups" {
   default     = {}
 }
 
-variable "keyvaults" {
+variable "keyvault" {
   type = object({
     name                    = optional(string)
     resource_groups_map_key = optional(string, "default")
