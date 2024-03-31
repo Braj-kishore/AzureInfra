@@ -164,7 +164,7 @@ jobs:
         environment:
           - dev
     runs-on: ubuntu-latest
-    need: Plan
+    needs: Plan
     environment: ${{ matrix.environment }}
     defaults:
       run:
