@@ -8,3 +8,15 @@ VirtualNetworks = {
     subnets = {}
   }
 }
+
+containerregistry = {
+  name = "acr"
+}
+
+keyvault = {
+  name = "KV"
+}
+
+app_service_plan = {
+  name = "asp"
+}

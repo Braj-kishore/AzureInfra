@@ -5,7 +5,7 @@
 module "avm-res-keyvault-vault" {
   source              = "Azure/avm-res-keyvault-vault/azurerm"
   version             = "0.5.3"
-  name                = var.keyvault.name == null ? "kv-${local.resource_name_suffix}" : var.keyvault.name
+  name                = var.keyvault.name == null ? "kv-${local.resource_name_suffix}" : "${var.keyvault.name}-${local.resource_name_suffix}"
   resource_group_name = azurerm_resource_group.rg[var.keyvault.resource_groups_map_key].name
   location            = azurerm_resource_group.rg[var.keyvault.resource_groups_map_key].location
   tenant_id           = data.azurerm_client_config.current.tenant_id
