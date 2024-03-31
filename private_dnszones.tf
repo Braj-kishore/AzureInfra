@@ -9,7 +9,7 @@ module "avm-res-network-privatednszone" {
   for_each            = local.privatednszones
   domain_name         = each.value
   resource_group_name = azurerm_resource_group.rg["privateDnsZones"].name
-  virtual_network_links = { for key, value in var.network : key => {
+  virtual_network_links = { for key, value in var.VirtualNetworks : key => {
     vnetlinkname = value.vnet_name
     vnetid       = module.network[key].virtual_network_id
   } }
