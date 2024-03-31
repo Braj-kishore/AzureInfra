@@ -13,7 +13,7 @@ module "avm-res-keyvault-vault" {
   tags                = local.tags
   diagnostic_settings = {
     enable_diagnostic = {
-      workspace_resource_id = module.operationalinsights-workspace.workspace_id
+      workspace_resource_id = module.operationalinsights-workspace.workspace_id.id
     }
   }
   network_acls     = var.network_acls

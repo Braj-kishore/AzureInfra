@@ -7,7 +7,7 @@ module "network" {
   source                        = "Azure/avm-res-network-virtualnetwork/azurerm"
   version                       = "0.1.4"
   for_each                      = var.VirtualNetworks
-  name                          = "${each.value.name}-${local.resource_name_suffix}"
+  name                          = "${each.value.vnet_name}-${local.resource_name_suffix}"
   resource_group_name           = azurerm_resource_group.rg[each.value.resource_groups_map_key].name
   location                      = azurerm_resource_group.rg[each.value.resource_groups_map_key].location
   virtual_network_address_space = each.value.virtual_network_address_space
@@ -20,7 +20,7 @@ module "network" {
   } }
   diagnostic_settings = {
     enable_diagnostic = {
-      workspace_resource_id = module.operationalinsights-workspace.workspace_id
+      workspace_resource_id = module.operationalinsights-workspace.workspace_id.id
     }
   }
 }
