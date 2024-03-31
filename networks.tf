@@ -4,12 +4,12 @@
 #--------------------------------------------------
 
 module "network" {
-  source              = "Azure/avm-res-network-virtualnetwork/azurerm"
-  version             = "0.1.4"
-  for_each            = var.VirtualNetworks
-  name                = "${each.value.name}-${local.resource_name_suffix}"
-  resource_group_name = azurerm_resource_group.rg[each.value.resource_groups_map_key].name
-  vnet_location       = azurerm_resource_group.rg[each.value.resource_groups_map_key].location
+  source                        = "Azure/avm-res-network-virtualnetwork/azurerm"
+  version                       = "0.1.4"
+  for_each                      = var.VirtualNetworks
+  name                          = "${each.value.name}-${local.resource_name_suffix}"
+  resource_group_name           = azurerm_resource_group.rg[each.value.resource_groups_map_key].name
+  location                      = azurerm_resource_group.rg[each.value.resource_groups_map_key].location
   virtual_network_address_space = each.value.virtual_network_address_space
   subnets = { for key, value in var.each.value.subnets : key => {
     address_prefixes                          = value.address_prefixes
