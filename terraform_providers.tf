@@ -12,9 +12,9 @@ terraform {
     }
   }
   backend "azurerm" {
-    storage_account_name = "xxxxxxxxxxx"
-    container_name       = "xxxxxxxxxxx"
-    key                  = "xxxxxxxxxxxx"
+    # storage_account_name = "xxxxxxxxxxx"
+    # container_name       = "xxxxxxxxxxx"
+    # key                  = "xxxxxxxxxxxx"
   }
 }
 
