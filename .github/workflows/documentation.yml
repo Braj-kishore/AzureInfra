@@ -13,6 +13,7 @@ permissions:
   contents: read
   pages: write 
   id-token: write
+  pull-requests: write
 
 jobs:
   docs:
@@ -80,7 +81,7 @@ jobs:
     - name: Terraform Plan
       id: plan
       run: | 
-        terraform plan -no-color -var-file="\environments\${{ matrix.environment }}.tfvars" \
+        terraform plan -no-color -var-file=".\environments\${{ matrix.environment }}.tfvars" \
         -compact-warnings -out="${{ matrix.environment }}tfplan"
 
     - uses: actions/github-script@v6
