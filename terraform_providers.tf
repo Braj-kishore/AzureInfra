@@ -15,7 +15,6 @@ terraform {
     storage_account_name = "xxxxxxxxxxx"
     container_name       = "xxxxxxxxxxx"
     key                  = "xxxxxxxxxxxx"
-    use_oidc             = true
   }
 }
 
