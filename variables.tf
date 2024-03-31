@@ -157,7 +157,7 @@ variable "app_service_plan" {
     name                                = optional(string)
     resource_groups_map_key             = optional(string, "default")
     os_type                             = optional(string, "Linux")
-    sku                                 = optional(string, "Standard")
+    sku_name                            = optional(string, "Standard")
     app_service_environment_resource_id = optional(string)
   })
   description = "app service plan arguments definition."

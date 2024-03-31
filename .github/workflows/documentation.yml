@@ -41,6 +41,10 @@ jobs:
          - dev
     runs-on: ubuntu-latest
     environment: ${{ matrix.environment }}
+    defaults:
+      run:
+      shell: bash
+      working-directory: ./
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -60,7 +64,7 @@ jobs:
 
     - name: Terraform fmt
       id: fmt
-      run: terraform fmt -check
+      run: terraform fmt -check -recursive
       continue-on-error: true
 
     - name: Terraform Init
