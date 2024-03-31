@@ -144,6 +144,7 @@ variable "containerregistry" {
     public_network_access_enabled = optional(bool, false)
     network_rule_bypass_option    = optional(string, "AzureServices")
     sku                           = optional(string, "Standard")
+    zone_redundancy_enabled       = optional(bool,false)
     network_rule_set = optional(object({
       default_action = optional(string, "Deny")
       ip_rule = optional(list(object({

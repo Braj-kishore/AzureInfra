@@ -13,6 +13,7 @@ module "avm-res-containerregistry-registry" {
   network_rule_bypass_option    = var.containerregistry.network_rule_bypass_option
   network_rule_set              = var.containerregistry.network_rule_set
   sku                           = var.containerregistry.sku
+  zone_redundancy_enabled       = var.containerregistry.zone_redundancy_enabled
   diagnostic_settings = {
     enable_diagnostic = {
       workspace_resource_id = module.operationalinsights-workspace.workspace_id.id
