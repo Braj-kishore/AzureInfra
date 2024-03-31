@@ -36,6 +36,14 @@ variable "resource_groups" {
   }
 }
 
+variable "log_analytics_workspace" {
+  type = object({
+    name                    = string
+    resource_groups_map_key = optional(string, "default")
+  })
+  description = "name of the log analytics workspce."
+}
+
 variable "VirtualNetworks" {
   type = map(object({
     vnet_name                     = string
@@ -87,6 +95,7 @@ variable "keyvault" {
     name                    = optional(string)
     resource_groups_map_key = optional(string, "default")
   })
+  default = {}
 }
 
 variable "contacts" {
@@ -149,6 +158,7 @@ variable "containerregistry" {
       })), [])
     }))
   })
+  default     = {}
   description = "Create container registry for storing docker images. for argument details refer https://github.com/Azure/terraform-azurerm-avm-res-containerregistry-registry"
 }
 
@@ -157,8 +167,9 @@ variable "app_service_plan" {
     name                                = optional(string)
     resource_groups_map_key             = optional(string, "default")
     os_type                             = optional(string, "Linux")
-    sku_name                            = optional(string, "Standard")
+    sku_name                            = optional(string, "S3")
     app_service_environment_resource_id = optional(string)
   })
   description = "app service plan arguments definition."
+  default     = {}
 }

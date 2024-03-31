@@ -14,9 +14,13 @@ containerregistry = {
 }
 
 keyvault = {
-  name = "KV"
+  name = "KV-dev-weu-01"
 }
 
 app_service_plan = {
   name = "asp"
+}
+
+log_analytics_workspace = {
+  name = "law-dev-weu-001"
 }

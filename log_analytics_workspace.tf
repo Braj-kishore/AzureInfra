@@ -6,7 +6,7 @@
 module "operationalinsights-workspace" {
   source              = "Azure/avm-res-operationalinsights-workspace/azurerm"
   version             = "0.1.3"
-  name                = "law-${local.resource_name_suffix}"
-  resource_group_name = azurerm_resource_group.rg["default"].name
-  location            = azurerm_resource_group.rg["default"].location
+  name                = var.log_analytics_workspace.name
+  resource_group_name = azurerm_resource_group.rg[var.log_analytics_workspace.resource_groups_map_key].name
+  location            = azurerm_resource_group.rg[var.log_analytics_workspace.resource_groups_map_key].location
 }
