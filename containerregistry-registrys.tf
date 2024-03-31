@@ -19,5 +19,6 @@ module "avm-res-containerregistry-registry" {
       workspace_resource_id = module.operationalinsights-workspace.workspace_id.id
     }
   }
-  tags = local.tags
+  tags             = local.tags
+  enable_telemetry = var.enable_telemetry
 }

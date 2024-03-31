@@ -17,6 +17,16 @@ variable "location" {
   DESCRIPTION
 }
 
+variable "enable_telemetry" {
+  type        = bool
+  default     = false
+  description = <<DESCRIPTION
+This variable controls whether or not telemetry is enabled for the module.
+For more information see https://aka.ms/avm/telemetry.
+If it is set to false, then no telemetry will be collected.
+DESCRIPTION
+}
+
 variable "resource_groups" {
   type = map(object({
     name   = string
@@ -144,7 +154,7 @@ variable "containerregistry" {
     public_network_access_enabled = optional(bool, false)
     network_rule_bypass_option    = optional(string, "AzureServices")
     sku                           = optional(string, "Standard")
-    zone_redundancy_enabled       = optional(bool,false)
+    zone_redundancy_enabled       = optional(bool, false)
     network_rule_set = optional(object({
       default_action = optional(string, "Deny")
       ip_rule = optional(list(object({

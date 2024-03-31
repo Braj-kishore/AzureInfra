@@ -18,6 +18,7 @@ module "avm-res-keyvault-vault" {
   }
   network_acls     = var.network_acls
   role_assignments = local.role_assignments
+  enable_telemetry = var.enable_telemetry
 }
 
 

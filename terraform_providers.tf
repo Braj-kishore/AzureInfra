@@ -11,6 +11,12 @@ terraform {
       version = ">= 3.5.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name  = "xxxxxxxxxxx"
+    storage_account_name = "xxxxxxxxxxx"
+    container_name       = "xxxxxxxxxxx"
+    key                  = "xxxxxxxxxxxx"
+  }
 }
 
 provider "azurerm" {

@@ -12,4 +12,5 @@ module "networksecuritygroup" {
   location            = azurerm_resource_group.rg[each.value.resource_groups_map_key].location
   nsgrules            = each.value.rules
   tags                = local.tags
+  enable_telemetry    = var.enable_telemetry
 }
