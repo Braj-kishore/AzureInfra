@@ -40,7 +40,6 @@ jobs:
         environment:
          - dev
     runs-on: ubuntu-latest
-    needs: docs
     environment: ${{ matrix.environment }}
     defaults:
       run:
