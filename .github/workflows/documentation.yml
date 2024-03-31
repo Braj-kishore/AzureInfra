@@ -38,7 +38,7 @@ jobs:
     strategy:
       matrix:
         environment:
-         -dev
+         - dev
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
