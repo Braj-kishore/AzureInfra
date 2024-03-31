@@ -11,11 +11,11 @@ module "network" {
   resource_group_name           = azurerm_resource_group.rg[each.value.resource_groups_map_key].name
   location                      = azurerm_resource_group.rg[each.value.resource_groups_map_key].location
   virtual_network_address_space = each.value.virtual_network_address_space
-  subnets = { for key, value in var.each.value.subnets : key => {
+  subnets = { for key, value in each.value.subnets : key => {
     address_prefixes                          = value.address_prefixes
     private_endpoint_network_policies_enabled = value.private_endpoint_network_policies_enabled
     service_endpoints                         = value.service_endpoints
-    network_security_group                    = var.network_security_groups_map_key != null ? { id = module.networksecuritygroup[value.network_security_groups_map_key].nsg_resource.id } : null
+    network_security_group                    = value.network_security_groups_map_key != null ? { id = module.networksecuritygroup[value.network_security_groups_map_key].nsg_resource.id } : null
     delegations                               = value.delegations
   } }
   diagnostic_settings = {
