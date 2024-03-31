@@ -18,4 +18,5 @@ module "network" {
     network_security_group                    = value.network_security_groups_map_key != null ? { id = module.networksecuritygroup[value.network_security_groups_map_key].nsg_resource.id } : null
     delegations                               = value.delegations
   } }
+  enable_telemetry = var.enable_telemetry
 }
