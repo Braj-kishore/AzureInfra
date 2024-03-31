@@ -158,12 +158,13 @@ jobs:
         path: ${{ matrix.environment }}tfplan
 
   Apply:
-    if: ${{ github.event_name == 'push' }} && if: ${{ github.actor != 'dependabot[bot]' }}
+    if: ${{ github.event_name == 'push' }} && ${{ github.actor != 'dependabot[bot]' }}
     strategy:
       matrix:
         environment:
           - dev
     runs-on: ubuntu-latest
+    need: Plan
     environment: ${{ matrix.environment }}
     defaults:
       run:
