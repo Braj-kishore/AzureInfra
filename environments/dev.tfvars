@@ -10,7 +10,7 @@ VirtualNetworks = {
 }
 
 containerregistry = {
-  name = "acr"
+  name = "acrdevweu001"
 }
 
 keyvault = {

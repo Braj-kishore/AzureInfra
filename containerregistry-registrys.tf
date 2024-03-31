@@ -15,7 +15,7 @@ module "avm-res-containerregistry-registry" {
   sku                           = var.containerregistry.sku
   diagnostic_settings = {
     enable_diagnostic = {
-      workspace_resource_id = module.operationalinsights-workspace.workspace_id
+      workspace_resource_id = module.operationalinsights-workspace.workspace_id.id
     }
   }
   tags = local.tags
