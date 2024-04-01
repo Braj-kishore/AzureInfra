@@ -10,11 +10,11 @@ VirtualNetworks = {
 }
 
 containerregistry = {
-  name = "acrdevweu001"
+  name = "acrdevweu01"
 }
 
 keyvault = {
-  name = "kv-dev-weu-01"
+  name = "kv-dev-weu-001"
 }
 
 app_service_plan = {
