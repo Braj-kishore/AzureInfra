@@ -14,7 +14,7 @@ VirtualNetworks = {
           name = "app-delegation-dev-weu-001"
           service_delegation = {
             name    = "Microsoft.Web/serverFarms"
-            actions = ["Microsoft.Network/virtualNetworks/subnets/join/action", "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action"]
+            actions = ["Microsoft.Network/virtualNetworks/subnets/join/action", "Microsoft.Network/virtualNetworks/subnets/action"]
           }
           }
         ]
