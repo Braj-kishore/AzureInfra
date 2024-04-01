@@ -151,7 +151,7 @@ variable "containerregistry" {
   type = object({
     name                          = optional(string)
     resource_groups_map_key       = optional(string, "default")
-    public_network_access_enabled = optional(bool, false)
+    public_network_access_enabled = optional(bool, true)
     network_rule_bypass_option    = optional(string, "AzureServices")
     sku                           = optional(string, "Standard")
     zone_redundancy_enabled       = optional(bool, false)
