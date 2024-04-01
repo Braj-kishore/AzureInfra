@@ -14,5 +14,5 @@ module "avm-res-network-privatednszone" {
     vnetid       = module.network[key].virtual_network_id
   } }
   enable_telemetry = var.enable_telemetry
-  tags             = local.tags
+  dns_zone_tags    = local.tags
 }
