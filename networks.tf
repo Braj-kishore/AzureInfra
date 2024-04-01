@@ -19,4 +19,5 @@ module "network" {
     delegations                               = value.delegations
   } }
   enable_telemetry = var.enable_telemetry
+  tags             = local.tags
 }

@@ -9,4 +9,5 @@ module "operationalinsights-workspace" {
   name                = var.log_analytics_workspace.name
   resource_group_name = azurerm_resource_group.rg[var.log_analytics_workspace.resource_groups_map_key].name
   location            = azurerm_resource_group.rg[var.log_analytics_workspace.resource_groups_map_key].location
+  tags                = local.tags
 }
