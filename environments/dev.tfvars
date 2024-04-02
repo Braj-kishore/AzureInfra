@@ -62,7 +62,7 @@ containerregistry = {
 }
 
 keyvault = {
-  name = "kv-dev-weu-001"
+  name = "kv-dev-weu-01"
 }
 
 app_service_plan = {
